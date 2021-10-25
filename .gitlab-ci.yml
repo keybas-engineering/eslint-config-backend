@@ -3,7 +3,7 @@ stages:
 
 # See: https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/npm.gitlab-ci.yml
 publish:
-  image: node:alpine
+  image: node:16-alpine
   stage: deploy
   only:
     - main
