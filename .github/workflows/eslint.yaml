@@ -1,7 +1,8 @@
 name: eslint
 on:
  push:
- - main
+  branches:
+  - main
 env:
   TOKEN_WR_PACKAGE_REGISTRY: ${{ secrets.TOKEN_WR_PACKAGE_REGISTRY }}
 jobs:
