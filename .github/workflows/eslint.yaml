@@ -16,7 +16,7 @@ jobs:
        node-version: '16'
    - name: Setup npmrc file and publish package
      run: |
-       npm config set -L project @keybas-engineering:registry https://npm.pkg.github.com
-       npm config set -L project -- '//npm.pkg.github.com/:_authToken='"${{env.TOKEN_WR_PACKAGE_REGISTRY}}"
+       echo "@keybas-engineering:registry=https://npm.pkg.github.com" > .npmrc
+       echo //npm.pkg.github.com/:_authToken=\"${{env.TOKEN_WR_PACKAGE_REGISTRY}}\" >> .npmrc
        npm ci --ignore-scripts
        npm  publish
