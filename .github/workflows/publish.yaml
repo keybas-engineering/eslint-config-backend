@@ -1,0 +1,21 @@
+name: publish
+on:
+ push:
+  branches:
+  - master
+env:
+  NODE_AUTH_TOKEN: ${{ secrets.TOKEN_WR_PACKAGE_REGISTRY }}
+jobs:
+ publish:
+   runs-on: ubuntu-latest
+   steps:
+   - uses: actions/checkout@v3
+   - name: Setup .npmrc file to publish to npm
+     uses: actions/setup-node@v3
+     with:
+          node-version: 16
+          always-auth: true
+          registry-url: https://npm.pkg.github.com
+          scope: '@keybas-engineering'
+   - run: npm install
+   - run: npm publish
