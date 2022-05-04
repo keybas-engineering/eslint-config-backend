@@ -1,4 +1,4 @@
-# @france-atelier/eslint-config-backend
+# @keybas-engineering/eslint-config-backend
 
 Configuration ESLint pour les services backend de Keybas.
 
@@ -20,7 +20,7 @@ Cette configuration ne définit ni parseur, ni formateur, qu'il faut installer s
 ### Installation
 
 ```sh
-npm i -D eslint typescript @france-atelier/eslint-config-backend @typescript-eslint/parser
+npm i -D eslint typescript @keybas-engineering/eslint-config-backend @typescript-eslint/parser
 ```
 
 ### Fichier `.eslintrc`
@@ -33,7 +33,7 @@ npm i -D eslint typescript @france-atelier/eslint-config-backend @typescript-esl
     "node": true,
     "es2021": true
   },
-  "extends": ["@france-atelier/eslint-config-backend"],
+  "extends": ["@keybas-engineering/eslint-config-backend"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2021,
