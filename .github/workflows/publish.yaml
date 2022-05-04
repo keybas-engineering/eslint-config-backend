@@ -2,7 +2,7 @@ name: publish
 on:
  push:
   branches:
-  - master
+  - main
 env:
   NODE_AUTH_TOKEN: ${{ secrets.TOKEN_WR_PACKAGE_REGISTRY }}
 jobs:
