@@ -10,7 +10,7 @@ Inclut les plugins suivants :
 - `mocha` pour valider les tests Mocha
 - `no-secrets` pour valider qu'il n'y ait pas de secrets dans le code
 - `security` pour certaines règles de sécurité
-- `security-node` pour d'autres règles de sécurité
+<!-- - `security-node` pour d'autres règles de sécurité -->
 - `sonarjs` pour la qualité de code
 - `unicorn` pour la qualité de code
 - `unused-imports` pour nettoyer les imports inutilisés

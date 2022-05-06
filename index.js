@@ -10,7 +10,7 @@ module.exports = {
     "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:security/recommended",
-    "plugin:security-node/recommended",
+    // "plugin:security-node/recommended",
     "plugin:sonarjs/recommended",
     "plugin:unicorn/recommended",
     "prettier",
@@ -23,7 +23,7 @@ module.exports = {
     "mocha",
     "no-secrets",
     "security",
-    "security-node",
+    // "security-node",
     "sonarjs",
     "unicorn",
     "unused-imports",
@@ -44,7 +44,7 @@ module.exports = {
     "unicorn/no-array-push-push": "off",
 
     // Security
-    "security-node/detect-crlf": "off",
+    // "security-node/detect-crlf": "off",
     "sonarjs/cognitive-complexity": ["warn", 8],
     "no-new-func": "error",
     "no-secrets/no-secrets": [
