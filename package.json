@@ -1,6 +1,6 @@
 {
   "name": "@keybas-engineering/eslint-config-backend",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A simple ESLint configuration for Keybas projects (backend)",
   "main": "index.js",
   "files": [
@@ -26,13 +26,16 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.22.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsonc": "^2.2.1",
     "eslint-plugin-mocha": "^10.0.4",
     "eslint-plugin-no-secrets": "^0.8.9",
     "eslint-plugin-security": "^1.5.0",
     "eslint-plugin-security-node": "^1.1.1",
     "eslint-plugin-sonarjs": "^0.13.0",
-    "eslint-plugin-unicorn": "^42.0.0"
+    "eslint-plugin-unicorn": "^42.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0"
   },
   "devDependencies": {
     "prettier": "^2.3.2"
