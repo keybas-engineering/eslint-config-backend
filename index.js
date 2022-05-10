@@ -7,8 +7,10 @@ module.exports = {
     "plugin:jsonc/prettier",
     "plugin:mocha/recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "plugin:security/recommended",
-    "plugin:security-node/recommended",
+    // "plugin:security-node/recommended",
     "plugin:sonarjs/recommended",
     "plugin:unicorn/recommended",
     "prettier",
@@ -16,13 +18,15 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   plugins: [
     "@typescript-eslint",
+    "import",
     "jsonc",
     "mocha",
     "no-secrets",
     "security",
-    "security-node",
+    // "security-node",
     "sonarjs",
     "unicorn",
+    "unused-imports",
   ],
   rules: {
     // Code quality
@@ -40,7 +44,7 @@ module.exports = {
     "unicorn/no-array-push-push": "off",
 
     // Security
-    "security-node/detect-crlf": "off",
+    // "security-node/detect-crlf": "off",
     "sonarjs/cognitive-complexity": ["warn", 8],
     "no-new-func": "error",
     "no-secrets/no-secrets": [
@@ -48,6 +52,39 @@ module.exports = {
       {
         ignoreContent: ["http://", "https://"],
         ignoreIdentifiers: ["ALPHABET"],
+      },
+    ],
+
+    // Imports
+    "import/order": [
+      "warn",
+      {
+        alphabetize: {
+          order: "asc",
+          caseInsensitive: true,
+        },
+        groups: [
+          ["builtin", "external"],
+          ["internal"],
+          ["parent", "sibling", "index"],
+          ["object"],
+          ["type"],
+        ],
+        "newlines-between": "always",
+        warnOnUnassignedImports: true,
+      },
+    ],
+    "unused-imports/no-unused-imports": "error",
+
+    // Unused variables
+    "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        vars: "all",
+        varsIgnorePattern: "^_",
+        args: "after-used",
+        argsIgnorePattern: "^_",
       },
     ],
 
@@ -90,5 +127,16 @@ module.exports = {
     "mocha/no-mocha-arrows": "warn",
     "mocha/no-setup-in-describe": "warn",
     "mocha/max-top-level-suites": "warn",
+  },
+  settings: {
+    // According to https://github.com/alexgorbatchev/eslint-import-resolver-typescript
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"],
+    },
+    "import/resolver": {
+      typescript: {
+        alwaysTryTypes: true,
+      },
+    },
   },
 };
